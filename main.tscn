@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dngnfhlqokrf5"]
+
+[ext_resource type="Script" path="res://Player.cs" id="1_34r3k"]
+[ext_resource type="Texture2D" uid="uid://b50i6gccu0d88" path="res://assets/Bob_16x16.png" id="1_usg6w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8wnk"]
+size = Vector2(13.1398, 22)
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(17.7333, 21.4673)
+script = ExtResource("1_34r3k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_usg6w")
+region_enabled = true
+region_rect = Rect2(0, 10, 14, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0.47899, 0)
+shape = SubResource("RectangleShape2D_a8wnk")
