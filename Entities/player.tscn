@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bes8kgk30t60a"]
+
+[ext_resource type="Texture2D" uid="uid://b50i6gccu0d88" path="res://assets/Bob_16x16.png" id="1_s6hlh"]
+[ext_resource type="Script" path="res://Scripts/player.cs" id="1_xt4sn"]
+[ext_resource type="Script" path="res://Scripts/Gun.cs" id="3_236q7"]
+[ext_resource type="PackedScene" uid="uid://dxhapdy1468f7" path="res://Entities/bullet.tscn" id="4_tu4d1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8hi7"]
+size = Vector2(12.7423, 21.9451)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(132.956, 137.907)
+scale = Vector2(2, 2)
+motion_mode = 1
+script = ExtResource("1_xt4sn")
+speed = 500.0
+
+[node name="Gun" type="Node2D" parent="."]
+position = Vector2(8.32002, 2.76319)
+script = ExtResource("3_236q7")
+bullet_scn = ExtResource("4_tu4d1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.386157, -0.0453115)
+shape = SubResource("RectangleShape2D_p8hi7")
+
+[node name="GFX" type="Sprite2D" parent="."]
+texture = ExtResource("1_s6hlh")
+region_enabled = true
+region_rect = Rect2(0, 10, 14, 22)
